@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function add(data) {
   return request({
-    url: 'api/leaseProject',
+    url: 'api/leaseProjectDetail',
     method: 'post',
     data
   })
@@ -10,7 +10,7 @@ export function add(data) {
 
 export function del(ids) {
   return request({
-    url: 'api/leaseProject/',
+    url: 'api/leaseProjectDetail/',
     method: 'delete',
     data: ids
   })
@@ -18,17 +18,18 @@ export function del(ids) {
 
 export function edit(data) {
   return request({
-    url: 'api/leaseProject',
+    url: 'api/leaseProjectDetail',
     method: 'put',
     data
   })
 }
 
-export function findSelectData() {
+export function endDetail(ids) {
   return request({
-    url: 'api/leaseProject/findSelectData',
-    method: 'get'
+    url: 'api/leaseProjectDetail/endLeaseDetail',
+    method: 'post',
+    data: ids
   })
 }
 
-export default { add, edit, del, findSelectData }
+export default { add, edit, del, endDetail }
